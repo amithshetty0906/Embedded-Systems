@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1693759244 source:c:\users\amith\desktop\admission\main.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	<string.h>
+	"admission.h"
+
+1693759569 source:c:\users\amith\desktop\admission\admission_op.c
+	"admission.h"
+	<stdio.h>
+
+1693759728 c:\users\amith\desktop\admission\admission.h
+

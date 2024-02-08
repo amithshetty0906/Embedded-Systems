@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1694756774 source:c:\users\amith\onedrive\embedded system\dsa\employee\employee\emp_op.c
+	<stdio.h>
+	<stdlib.h>
+	"emp.h"
+
+1694756465 source:c:\users\amith\onedrive\embedded system\dsa\employee\employee\main.c
+	<string.h>
+	<stdlib.h>
+	<assert.h>
+	"emp.h"
+
+1694755488 c:\users\amith\onedrive\embedded system\dsa\employee\employee\emp.h
+

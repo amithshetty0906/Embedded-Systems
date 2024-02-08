@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1701489068 source:c:\users\amith\onedrive\embedded system\dsa\lab\hash table\main.c
+	<stdio.h>
+	<stdlib.h>
+	"hasht.h"
+	<assert.h>
+
+1701489328 source:c:\users\amith\onedrive\embedded system\dsa\lab\hash table\hasht_op.c
+	<stdio.h>
+	<stdlib.h>
+	"hasht.h"
+	<string.h>
+
+1701488992 c:\users\amith\onedrive\embedded system\dsa\lab\hash table\hasht.h
+	<string.h>
+

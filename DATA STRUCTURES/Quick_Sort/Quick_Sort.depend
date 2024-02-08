@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1696400817 source:c:\users\amith\onedrive\embedded system\dsa\lab\quick_sort\main.c
+	<stdio.h>
+	"Quick_Sort.h"
+
+1696400497 c:\users\amith\onedrive\embedded system\dsa\lab\quick_sort\quick_sort.h
+
+1696400800 source:c:\users\amith\onedrive\embedded system\dsa\lab\quick_sort\quick_op.c
+	"Quick_Sort.h"
+
