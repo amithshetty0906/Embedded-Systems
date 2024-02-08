@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1693791490 source:c:\users\ppriy\downloads\all_in_one\data\dynamic\dynamic\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdlib.h>
+	"dyn_arr.h"
+	<assert.h>
+
+1693792055 c:\users\ppriy\downloads\all_in_one\data\dynamic\dynamic\dyn_arr.h
+
+1693792231 source:c:\users\ppriy\downloads\all_in_one\data\dynamic\dynamic\dyn_arr.c
+	<stdio.h>
+	<stdlib.h>
+	"dyn_arr.h"
+

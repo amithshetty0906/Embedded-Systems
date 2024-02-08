@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1693961209 source:c:\users\ppriy\downloads\all_in_one\data\dynamic\employee\employee.c
+	<stdio.h>
+	<stdlib.h>
+	"employee.h"
+
+1693961745 c:\users\ppriy\downloads\all_in_one\data\dynamic\employee\employee.h
+
+1693962029 source:c:\users\ppriy\downloads\all_in_one\data\dynamic\employee\main.c
+	<stdio.h>
+	<stdlib.h>
+	"employee.h"
+	<assert.h>
+	<string.h>
+

@@ -1,16 +1,22 @@
+#include<stdio.h>
+#include<stdlib.h>
 typedef struct _employee_
 {
-    int emp_id;
-    char emp_name[10];
-    float emp_salary;
-}employee;
+ char emp_name[10];
+ int emp_id;
+ float emp_salary;
 
-typedef struct emp_arr
+ struct _employee_ *ptr
+}Employee;
+
+typedef struct _list_
 {
-    employee *arr;
-    int c_size,t_size;
-}emp;
+    Employee *head,*tail;
+    int count;
 
-emp *initialise(int);
+}List;
 
-int insert_emp_data(emp*,employee);
+List *initialise_emp_data();
+int insert_data(List*,char * ,int,float );
+int search_emp(List *,int );
+

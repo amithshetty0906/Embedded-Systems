@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1694610396 source:c:\users\ppriy\downloads\all_in_one\data\dynamic\linked_list\link.c
+	<stdio.h>
+	<stdlib.h>
+	"link.h"
+
+1694132896 c:\users\ppriy\downloads\all_in_one\data\dynamic\linked_list\link.h
+
+1694610872 source:c:\users\ppriy\downloads\all_in_one\data\dynamic\linked_list\main.c
+	<stdio.h>
+	<stdlib.h>
+	<assert.h>
+	"link.h"
+

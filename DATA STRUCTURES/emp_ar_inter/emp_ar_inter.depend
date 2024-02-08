@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1584205420 source:c:\users\amith\downloads\practice dsa\emp_ar_inter\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1696966078 source:c:\users\amith\downloads\practice dsa\emp_ar_inter\emp_arop.c
+	<stdio.h>
+	"emp_ar.h"
+
+1696965935 c:\users\amith\downloads\practice dsa\emp_ar_inter\emp_ar.h
+	<stdio.h>
+

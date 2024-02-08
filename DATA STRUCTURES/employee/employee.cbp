@@ -32,12 +32,14 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Unit filename="emp.h" />
-		<Unit filename="emp_op.c">
+		<Unit filename="emp_ope.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Extensions />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

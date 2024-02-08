@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1695152175 source:c:\users\amith\downloads\queue\queue_op.c
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+
+1695152195 c:\users\amith\downloads\queue\queue.h
+	<stdlib.h>
+	<stdio.h>
+
+1695152285 source:c:\users\amith\downloads\queue\main.c
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+	"assert.h"
+
+1695198521 source:c:\users\amith\downloads\practice dsa\queue\queue_op.c
+	<stdio.h>
+	<stdlib.h>
+	"queue.h"
+
+1695198511 c:\users\amith\downloads\practice dsa\queue\queue.h
+	<stdlib.h>
+	<stdio.h>
+
