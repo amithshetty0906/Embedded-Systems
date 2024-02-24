@@ -34,7 +34,7 @@ int main(char argc , char *argv[]){
         int status ;
         waitpid(id,&status,0);
         printf("I'm parent with pid %d\n",getpid());
-        printf("Output of something that run on child  =%d \n",WEXITSTATUS(status));
+        printf("Output of something that run on child %d \n",WEXITSTATUS(status));
     }
     return 0;
 }
