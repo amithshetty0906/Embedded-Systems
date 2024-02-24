@@ -43,7 +43,7 @@ int main(){
             }
             else{
                 int status;
-                waitpid(id,&status,0);
+                waitpid(pid,&status,0);
                 printf("I am the parent with pid %d\n",getpid());
             }
         }
