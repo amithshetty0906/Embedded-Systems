@@ -1,3 +1,7 @@
+/* Write a C program to populate a matrix of size 5*10 by 
+generating random numbers in the range 1 to 10. Display the
+matrix to the screen.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

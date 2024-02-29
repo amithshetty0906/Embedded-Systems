@@ -1,3 +1,6 @@
+/* Write a simple C program to generate a random number 
+between 0 and 9.*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>

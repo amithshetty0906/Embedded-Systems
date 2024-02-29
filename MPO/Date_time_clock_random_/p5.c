@@ -1,3 +1,5 @@
+/* Write a C program to display the current time.*/
+
 #include <stdio.h>
 #include <time.h>
 
