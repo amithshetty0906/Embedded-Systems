@@ -12,8 +12,8 @@ your results.*/
 #include<stdio.h>
 
 void sort(int mat[][10],int rows,int cols){
-    int temp=[100*100];
-    int k-0;
+    int temp[rows*cols];
+    int k=0;
 
     for(int i=0;i<rows;i++){
             for(int j=0;j<cols;j++){
@@ -21,7 +21,22 @@ void sort(int mat[][10],int rows,int cols){
             }
     }
 
-    for(int i-0;)
+    for(int i=0;i<rows*cols-1;i++){
+        for(int j=0;j<rows*cols-i-1;j++){
+            if(temp[j]>temp[j+1]){
+                int t=temp[j];
+                temp[j]=temp[j+1];
+                temp[j+1]=t;
+            }
+        }
+    }
+
+    k=0;
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<cols;j++){
+            mat[i][j]=temp[k++];
+        }
+    }
 }
 
 
