@@ -7,12 +7,12 @@ to the user.*/
 #include<stdio.h>
 #define SIZE 10
 
-void matrixmul(int mat[][SIZE],int mat1[][SIZE],int mat2[][SIZE],int result[][SIZE],int row,int col,int row1,int col1,int row2,int col2){
+void matrixmul(int mat1[][SIZE],int mat2[][SIZE],int result[][SIZE],int row1,int col1,int row2,int col2){
     if(col1 != row2){
-        printf("Multiplication not possible");
+        printf("Multiplication not possible\n");
         return;
     }
-    for(int i=0;;i<row1;i++){
+    for(int i=0;i<row1;i++){
         for(int j=0;j<col2;j++){
             result[i][j]=0;
             for(int k=0;k<col1;k++){
@@ -20,11 +20,12 @@ void matrixmul(int mat[][SIZE],int mat1[][SIZE],int mat2[][SIZE],int result[][SI
             }
         }
     }
+}
 
-    printf("Matrix after multiplication is\n");
-    for(int i=0;;i<row;i++){
+void display(int mat[][SIZE],int row,int col){
+    for(int i=0;i<row;i++){
         for(int j=0;j<col;j++){
-            printf("%d",mat[i][j]);
+            printf("%d\t",mat[i][j]);
         }
         printf("\n");
     }
@@ -57,7 +58,8 @@ int main() {
     }
 
     printf("Result of multiplication:\n");
-    matrixmul(mat,row,col,mat1, mat2, result, row1, col1, row2, col2);
+    matrixmul(mat1, mat2, result, row1, col1, row2, col2);
+    display(result,row1,col2);
 
     return 0;
 
