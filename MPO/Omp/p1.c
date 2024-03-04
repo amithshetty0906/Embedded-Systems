@@ -1,56 +1,44 @@
-/*1. Display a welcome message in a parallel bock and observe
-how many times it gets displayed.
-2. Modify the above to print the thread id of the executing
-thread, with each disply message.
-3. Further modify the above to print the total number of 
-executing threads.
-4. Create a parallel block. Compute the sum of numbers from
-zero to thread_id, and output the sum to the screen. Run 
-your code and observe the result.*/
+/*Illustrate loop parallelism with the for loop by writing a 
+program to calculate the sum of an array in parallel using 
+OpenMP. (Use a shared variable for the result and private 
+variables for loop indices).*/
 
-#include <omp.h>
-#include <stdio.h>
+#include<stdio.h>
+#include<omp.h>
+#include<stdlib.h>
 
-int main() {
-    printf("question 1\n");
-    // 1. Display a welcome message in a parallel block and observe how many times it gets displayed.
-    #pragma omp parallel
-    {
-        printf("Welcome message\n");
+int main(){
+    const int size =100;
+    const int t_num=4;
+
+    int array[size];
+    int sum=0;
+
+    srand(123);
+    for(int i=0;i<size;i++){
+        array[i]=rand()%100;
+    }
+    
+    for(int i=0;i<size;i++){
+        printf("%d ",array[i]);
     }
 
-    printf("\nquestion2\n");
-
-    // 2. Modify the above to print the thread id of the executing thread, with each display message.
-    #pragma omp parallel
+    #pragma omp parallel num_threads(t_num)shared (sum)
     {
-        int t_id = omp_get_thread_num();
-        printf("Welcome message from thread %d\n", t_id);
-    }
+        int t_sum=0;
 
-    printf("\nquestion3\n");
-
-    // 3. Further modify the above to print the total number of executing threads.
-    #pragma omp parallel
-    {
-        int t_id = omp_get_thread_num();
-        int t_num = omp_get_num_threads();
-        printf("Welcome message from thread %d (Total threads: %d)\n", t_id, t_num);
-    }
-
-    printf("\nquestion4\n");
-
-    // 4. Create a parallel block. Compute the sum of numbers from zero to thread_id, and output the sum to the screen.
-    #pragma omp parallel
-    {
-        int t_id = omp_get_thread_num();
-        int sum = 0;
-        for (int i = 0; i <= t_id; ++i) {
-            sum += i;
+        #pragma omp for
+        for(int i=0;i<size;i++){
+            t_sum +=array[i];
         }
-        printf("Thread %d: Sum from 0 to %d is %d\n", t_id, t_id, sum);
+
+        #pragma omp critical
+        {
+            sum += t_sum;
+        }
     }
+
+    printf("\nSum of array elements is %d\n",sum);
 
     return 0;
 }
-
