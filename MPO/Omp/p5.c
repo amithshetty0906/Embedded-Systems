@@ -9,7 +9,7 @@ variables.*/
 
 int main(){
     const int size = 10;
-    const int t_num = 4;
+    const int t_num = 4; b
 
     int fibonacci[size];
     fibonacci[0]=0;
