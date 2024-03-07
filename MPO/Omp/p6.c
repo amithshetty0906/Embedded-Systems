@@ -10,9 +10,9 @@ const int COLS =3;
 
 void transpose_parallel(int input[ROWS][COLS], int output[COLS][ROWS]) {
     #pragma omp parallel for
-    
+
     for (int i = 0; i < ROWS; i++) {
-        for (int j = 0; j < COLS; j++) {
+        for (int j = 0; j < COLS; j++){
             output[j][i] = input[i][j];
         }
     }
