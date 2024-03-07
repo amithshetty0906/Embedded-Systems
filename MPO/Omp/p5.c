@@ -3,52 +3,40 @@ parallel using OpenMP. Use shared variables for the result
 array and private variables for each thread's local 
 variables.*/
 
-#include<stdio.h>
-#include<omp.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <omp.h>
 
-int main(){
-    const int size = 10;
-    const int t_num = 4; 
-
-    int fibonacci[size];
-    fibonacci[0]=0;
-    fibonacci[1]=1;
-
-    /*#pragma omp parallel num_threads(t_num) shared(fibonacci)
+void fibonacci_parallel(int size, int *result) {
+    #pragma omp parallel
     {
-        int t_id = omp_get_thread_num();
-        int start_index = 2*t_id +2;
-        int end_index = start_index + size/t_num;
-        
-
-        for(int i= start_index;i<end_index;i++){
-            fibonacci[i] = fibonacci[i-1] + fibonacci[i-2];
-        }
-    }*/
-
-    #pragma omp parallel num_threads(t_num) shared(fibonacci)
-    {
-        int t_id = omp_get_thread_num();
-        int fib[size];
-        
-
-        for(int i= 2+t_id;i<size;i += t_num){
-            fib[i] = fibonacci[i-1] + fibonacci[i-2];
-        }
-
-        #pragma omp critical
+        int i, a = 0, b = 1;
+        #pragma omp single
         {
-            for (int i = 2 + t_id; i < size; i += t_num){
-                fibonacci[i] = fib[i];
-            }
+            result[0] = a;
+            result[1] = b;
+        }
+        #pragma omp for
+        for (i = 2; i < size; i++) {
+            int temp = b;
+            b = a + b;
+            a = temp;
+            result[i] = b;
         }
     }
+}
 
-    printf("Fibonacci series is \n");
-    for(int i=2;i<size;i++){
-        printf("%d ",fibonacci[i]);
+int main() {
+    const int size = 20; // Number of terms in the Fibonacci series
+    int result[size];
+    
+    fibonacci_parallel(size, result);
+    
+    printf("Fibonacci Series up to %d terms:\n", size);
+    for (int i = 0; i < size; i++) {
+        printf("%d ", result[i]);
     }
+    printf("\n");
+    
     return 0;
 }
 
