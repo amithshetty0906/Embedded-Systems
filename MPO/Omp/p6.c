@@ -2,42 +2,50 @@
 OpenMP. Use shared variables for the input and output 
 matrices and private variables for loop indices.*/
 
-#include<stdio.h>
-#include<omp.h>
+#include <stdio.h>
+#include <omp.h>
 
-int main(){
-    const int n=2;
-    int A[n][n];
-    int B[n][n];
+const int ROWS=3;
+const int COLS =3;
 
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            A[i][j]= i*n+j;
+void transpose_parallel(int input[ROWS][COLS], int output[COLS][ROWS]) {
+    #pragma omp parallel for
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            output[j][i] = input[i][j];
         }
     }
+}
 
-    #pragma omp parallel for shared(A,B)
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            B[i][j] = A[i][j];
+int main() {
+    
+    int input_matrix[ROWS][COLS];
+    int output_matrix[COLS][ROWS];
+
+    printf("Matrix elements:\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            scanf("%d ",&input_matrix[i][j]);
         }
     }
-
-    printf("\nInput Matrix\n");
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            printf("%d ",A[i][j]);
+    
+    transpose_parallel(input_matrix, output_matrix);
+    
+    printf("Original Matrix:\n");
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            printf("%d ", input_matrix[i][j]);
         }
+        printf("\n");
     }
-
+    
     printf("\nTransposed Matrix:\n");
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            printf("%d ",B[i][j]);
+    for (int i = 0; i < COLS; i++) {
+        for (int j = 0; j < ROWS; j++) {
+            printf("%d ", output_matrix[i][j]);
         }
+        printf("\n");
     }
-
+    
     return 0;
-
-
 }
