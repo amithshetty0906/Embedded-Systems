@@ -18,7 +18,7 @@ void transpose_parallel(int input[ROWS][COLS], int output[COLS][ROWS]) {
     }
 }
 
-int main() {
+int main() { 
     
     int input_matrix[ROWS][COLS];
     int output_matrix[COLS][ROWS];
