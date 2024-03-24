@@ -27,7 +27,7 @@ int main(){
         exit(1);
     }
 
-    if((shmaddr = shmat(shmid,NULL,o))== (char*)-1){
+    if((shmaddr = shmat(shmid,NULL,0))== (char*)-1){
         perror("shmat");
         exit(1);
     }
