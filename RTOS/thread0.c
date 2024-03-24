@@ -58,4 +58,4 @@
     pthread_exit(0);
  }
 
-/*gcc -o exThread exThread.c -pthread*/
+/*gcc -o thread0 thread0.c -pthread*/
