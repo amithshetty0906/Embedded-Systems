@@ -23,7 +23,10 @@ int main(){
     scanf("%d %d",&n1,&n2);
     pthread_attr_init(&a1);
 
+    printf("thread one\n");
     pthread_create(&t1,&a1,f1,&n1);
+    sleep(5);
+    printf("thread two\n");
     pthread_create(&t2,&a1,f2,&n2);
 
     pthread_join(t1,NULL);
