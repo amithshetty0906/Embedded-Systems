@@ -5,9 +5,7 @@ running the program multiple times, you should see the same
 random number output}*/
 
 #include <stdio.h>
-
 #include <stdlib.h>
-
 #include <time.h>
 
 int main() {
