@@ -426,6 +426,8 @@ InitializeEmuGop (
 {
   EFI_STATUS  Status;
 
+  SampleLib(); //calling  function which is in Sample Lib
+
   Status = EfiLibInstallDriverBindingComponentName2 (
              ImageHandle,
              SystemTable,

@@ -10,20 +10,19 @@
 
 [Defines]
   INF_VERSION                    = 0x00010005
-  BASE_NAME                      = SecPeiServicesLib
-  FILE_GUID                      = E3E4A441-8465-0F41-8AF4-F67EBE984099
-  MODULE_TYPE                    = PEIM
+  BASE_NAME                      = SampleLib
+  FILE_GUID                      = 221791F0-3E78-48A6-A6F4-8540A16E32A5
+  MODULE_TYPE                    = BASE
   VERSION_STRING                 = 1.0
-  LIBRARY_CLASS                  = PeiServicesLib|SEC PEIM PEI_CORE
-  PI_SPECIFICATION_VERSION       = 0x0001000A
+  LIBRARY_CLASS                  = SampleLib
+ 
 
 #
 #  VALID_ARCHITECTURES           = IA32 X64 EBC (EBC is for build only)
 #
 
 [Sources]
-  PeiServicesLib.c
-  FwVol.c
+  SampleLib.c
 
 
 [Packages]
@@ -32,11 +31,6 @@
 
 [LibraryClasses]
   DebugLib
-  BaseMemoryLib
-  PpiListLibp
-
-[Pcd]
-  gEmulatorPkgTokenSpaceGuid.PcdPeiServicesTablePage
 
 
 

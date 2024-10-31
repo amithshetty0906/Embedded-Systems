@@ -49,6 +49,7 @@
   BaseLib
   DebugLib
   KeyMapLib
+  SampleLib #Checking sample lib
 
 
 [Guids]
